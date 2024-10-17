@@ -1,0 +1,87 @@
+<!-- <div>
+    <h2>Edit Product</h2>
+    <form ng-submit="updateProduct()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" ng-model="selectedProduct.name" required />
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" ng-model="selectedProduct.price" required />
+
+        <button type="submit">Update</button>
+        <button type="button" ng-click="cancelEdit()">Cancel</button>
+    </form>
+
+    <div ng-if="message" class="alert">{{ message }}</div>
+</div> -->
+
+  <!-- Embedded Edit Product Form -->
+  <!-- <div ng-if="selectedProduct.id">
+    <h2>Edit Product</h2>
+    <form ng-submit="updateProduct()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" ng-model="selectedProduct.name" required />
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" ng-model="selectedProduct.price" required />
+
+        <button type="submit">Update</button>
+        <button type="button" ng-click="cancelEdit()">Cancel</button>
+    </form>
+
+    <div ng-if="message" class="alert">{{ message }}</div>
+</div> -->
+
+
+<div ng-if="selectedProduct.id" class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2>Edit Product</h2>
+                </div>
+                <div class="card-body p-4">
+                    <form ng-submit="updateProduct()">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                ng-model="selectedProduct.name"
+                                class="form-control"
+                                placeholder="Enter product name"
+                                required
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Price</label>
+                            <input
+                                type="number"
+                                id="price"
+                                ng-model="selectedProduct.price"
+                                class="form-control"
+                                placeholder="Enter product price"
+                                min="0"
+                                required
+                            />
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-success px-4">
+                                <i class="bi bi-check-circle"></i> Update
+                            </button>
+                            <button type="button" class="btn btn-danger px-4" ng-click="cancelEdit()">
+                                <i class="bi bi-x-circle"></i> Cancel
+                            </button>
+                        </div>
+                    </form>
+
+                    <div ng-if="message" class="alert alert-info mt-3 text-center">
+                        {{ message }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

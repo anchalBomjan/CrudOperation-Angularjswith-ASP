@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="productApp">
+<head>
+    <title>Product Management</title>
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"rel="stylesheet"/>
+
+<!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"rel="stylesheet"/>
+
+
+
+    <!-- Include CSS file -->
+    <link rel="stylesheet" href="CSS/Style.css">
+    <script src="lib\angular.min.js"></script> <!-- Make sure this file exists -->
+    <script src="lib\angular-route.min.js"></script> <!-- Make sure this file exists -->
+    
+    <script src="app.js"></script>
+   
+    <script src="Services\productService.js"></script> <!-- Ensure this path is correct -->
+    <script src="Controller\productController.js"></script> <!-- Ensure this path is correct -->
+
+    <style>
+        header {
+            background-color: #4CAF50;
+            padding: 10px;
+        }
+        header a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header ng-include="'views/navbar.html'"></header>
+    <main ng-view>
+    </main>
+</body>
+</html>

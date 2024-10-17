@@ -49,7 +49,7 @@ namespace ProductAPI.Controllers
             return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
         }
 
-        // PUT: api/Product/5
+       // PUT: api/Product/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(int id, Product product)
         {
@@ -79,7 +79,7 @@ namespace ProductAPI.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Product/5
+       // DELETE: api/Product/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
