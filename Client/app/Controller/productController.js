@@ -12,11 +12,13 @@ app.controller('ProductController', [
         function loadProducts() {
             ProductService.getProducts()
                 .then(function (data) {
+                    console.log('Products loaded:', data); //  checking data Log the products
                     $scope.products = data;
                 })
                 .catch(function (error) {
                     $scope.message = 'Error loading products: ' + error.message;
                 });
+               
         }
 
         // Load product by ID for editing if in edit mode
@@ -24,6 +26,7 @@ app.controller('ProductController', [
             if (productId) {
                 ProductService.getProductById(productId)
                     .then(function (data) {
+                        console.log(`Loading product by id:`,data);  // checking   data
                         $scope.selectedProduct = data; // Bind product to the form
                     })
                     .catch(function (error) {
@@ -34,6 +37,7 @@ app.controller('ProductController', [
 
         // Add a new product
         $scope.addProduct = function () {
+            console.log('Adding product:', $scope.newProduct); // checking  Log the new product
             ProductService.addProduct($scope.newProduct)
                 .then(function () {
                     $scope.message = 'Product added successfully!';
@@ -47,6 +51,7 @@ app.controller('ProductController', [
 
         // Edit: Update selected product
         $scope.updateProduct = function () {
+            console.log('Updating product:', $scope.selectedProduct); // checking Log the product to update
             ProductService.updateProduct($scope.selectedProduct.id, $scope.selectedProduct)
                 .then(function () {
                     $scope.message = 'Product updated successfully!';
