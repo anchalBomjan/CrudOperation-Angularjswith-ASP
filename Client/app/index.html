@@ -12,7 +12,7 @@
 
 
     <!-- Include CSS file -->
-    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="CSS\Style.css">
     <script src="lib\angular.min.js"></script> <!-- Make sure this file exists -->
     <script src="lib\angular-route.min.js"></script> <!-- Make sure this file exists -->
     
@@ -24,16 +24,24 @@
 
 
     <style>
-        header {
+       nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             background-color: #4CAF50;
             padding: 10px;
+            z-index: 1000;
         }
-        header a {
+
+        nav a {
             color: white;
             margin-right: 15px;
             text-decoration: none;
         }
+
         main {
+            margin-top: 60px;
             padding: 20px;
         }
     </style>
